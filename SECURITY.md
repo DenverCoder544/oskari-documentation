@@ -11,4 +11,4 @@ On rare occasions a security update might be backported for older releases as we
 
 ## Reporting a Vulnerability
 
-Security issues can be reported privately through the GitHub Security tab on [https://github.com/oskariorg/oskari-documentation/security].
+Security issues can be reported privately through the [GitHub Security tab](https://github.com/oskariorg/oskari-documentation/security).
