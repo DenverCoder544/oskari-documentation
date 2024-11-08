@@ -29,7 +29,7 @@ With commandline git:
 Note! You can also download the codes in zip format from Github, but for contributing any changes to Oskari git is mandatory.
 Additional Maven modules can be contributed outside git though if they are compatible with the current develop/master branch, but this is not adviced.
 
-Note! The frontend source code is already available under `{jetty.base}/oskari-frontend` in the [Jetty bundle](/download). To update it you can replace it with code found in https://github.com/oskariorg/oskari-frontend.
+Note! The sample application, including its source code and build, is available in `{jetty.base}/sample-application` within the [Jetty bundle](/download). The Jetty bundle uses the pre-built code located in the `dist` folder. To update the sample application you can replace the contents of the `sample-application` folder with a clone from https://github.com/oskariorg/sample-application, and build the application following the instructions in its README.md file.
 
 ### Build Oskari server
 
