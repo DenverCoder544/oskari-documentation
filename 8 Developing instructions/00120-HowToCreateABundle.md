@@ -1,8 +1,8 @@
 ## How to create a bundle
 
-If you haven't done it already, download sources [here](). Then extract the files from the downloaded archive.
+If you haven't done it already, download sources [here](https://oskari.org/download/). Then extract the files from the downloaded archive.
 
-Now decide a `<bundle-identifier>` which is unique and describes the functionality the bundle offers e.g. 'search' (already implemented so prefix it with something like mysearch).
+Now decide a `<bundle-identifier>` which is unique and describes the functionality the bundle offers e.g. `search` (already implemented so prefix it with something like mysearch).
 
 Create a folder with the name of your `<bundle-identifier>` under `/packages/framework/` and `/bundles/framework/`. If you require styling/images, create a folder under `/bundles/framework/<bundle-identifier>/resources/css`, too. The `/framework/` directory isn't enforced and you can replace it with something fitting your bundle compilation. The `framework` directory refers to the namespace of the same name and it includes (almost) all code written by the Oskari core team. It is encouraged to create your own namespace (and directories) for your own bundles.
 
