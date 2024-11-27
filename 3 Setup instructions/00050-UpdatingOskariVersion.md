@@ -25,7 +25,7 @@ Updating an Oskari-powered server that is based on the [sample-server-extension]
 
 ```
     <properties>
-        <oskari.version>1.55.1</oskari.version>
+        <oskari.version>1.0.0</oskari.version>
         ...
     </properties>
 ```
@@ -34,7 +34,7 @@ To the new version:
 
 ```
     <properties>
-        <oskari.version>1.56.0</oskari.version>
+        <oskari.version>1.0.1</oskari.version>
         ...
     </properties>
 ```
@@ -45,7 +45,7 @@ After this run `mvn clean install` to generate a new `oskari-map.war` under `[yo
 Updating an Oskari application that is based on the [sample-application](https://github.com/oskariorg/sample-application) template is fairly simple as well. For the frontend the oskari-frontend (and possible oskari-frontend-contrib) dependency is updated by changing the version number in [package.json](https://github.com/oskariorg/sample-application/blob/1.2.1/package.json#L9) file from the current version in the app:
 ```
   "dependencies": {
-    "oskari-frontend": "https://git@github.com/oskariorg/oskari-frontend.git#1.55.2"
+    "oskari-frontend": "https://git@github.com/oskariorg/oskari-frontend.git#1.0.0"
   },
 ```
 
@@ -53,7 +53,7 @@ To the new version:
 
 ```
   "dependencies": {
-    "oskari-frontend": "https://git@github.com/oskariorg/oskari-frontend.git#1.56.0"
+    "oskari-frontend": "https://git@github.com/oskariorg/oskari-frontend.git#1.0.1"
   },
 
 ```
