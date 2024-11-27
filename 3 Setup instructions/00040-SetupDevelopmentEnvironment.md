@@ -1,7 +1,8 @@
 ## Setup Oskari development environment
 
-This document describes how to setup development environment for Oskari using source code. If you want to develop / maintain oskari yourself this is the correct section.
-For setting up an instance using the ready jetty bundle check out [Setup Jetty](00030-SetupJetty.md)
+This section describes how to setup development environment for Oskari using source code. If you want to develop or maintain Oskari yourself this is the correct section.
+
+For setting up an instance using the ready jetty bundle see [Setup Jetty](00030-SetupJetty.md)
 
 ### Requirements
 
@@ -9,7 +10,7 @@ The following items are assumed installed.
 
 * JDK 8
 * [Maven 3+](http://maven.apache.org/) (developed using 3.5.0)
-* Git client (http://git-scm.com/) - Optionally download zip file from https://github.com/oskariorg/oskari-server
+* [Git client](http://git-scm.com/) (git is mandatory for contributing any changes to Oskari) - Optionally download zip file from https://github.com/oskariorg/oskari-server
 * `{jetty.base}` refers to the oskari-server folder in an unzipped [Jetty bundle](/download)
 
 ### Setup Git configuration
@@ -26,14 +27,14 @@ With commandline git:
 
     git clone https://github.com/oskariorg/oskari-server.git
 
-Note! You can also download the codes in zip format from Github, but for contributing any changes to Oskari git is mandatory.
-Additional Maven modules can be contributed outside git though if they are compatible with the current develop/master branch, but this is not adviced.
+Note! You can also download the codes in zip format from Github, but for contributing any changes to Oskari git is mandatory. 
+Additional Maven modules can be contributed outside git though if they are compatible with the current develop/master branch, but this is not advised.
 
 Note! The frontend source code is already available under `{jetty.base}/oskari-frontend` in the [Jetty bundle](/download). To update it you can replace it with code found in https://github.com/oskariorg/oskari-frontend.
 
 ### Build Oskari server
 
-This will build all modules that Oskari server is composed of.
+This will build all modules that Oskari server is composed of:
 
     cd oskari-server
     mvn clean install
