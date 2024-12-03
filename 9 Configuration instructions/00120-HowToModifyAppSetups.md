@@ -42,39 +42,17 @@ The application specific migrations can of course be done however you want but t
 
 ### Modifying applications after the initial database population
 
-Here's an example Flyway-migration that you can add on your server-extension code. Note that the order in which migrations are run is determined by the version number on the filename (the below would be 1.0.0). When you want to add a new migration after one has been run, you need to bump the version to a higher number like 1.0.1, 1.1.0, 2.0.0. So take a note a consider a versioning strategy for your Oskari instance. For best practices the version on the frontend codes package.json, the version on the server Maven modules pom.xml and the version on the Flyway migration should be tied to each other someway. Also note that the package reads `[your apps module]`. This is `example` on our sample-server-extension but can and should be changed to something that describes your app. (Not sure why we didn't call it "app" instead of "example" as that would have been more generic to use without renaming/might change this later). Note that you can also have multiple Flyway-modules on your app. The modules that are used when the server runs is set on `oskari-ext.properties` as `db.additional.modules`.
+Here's an example Flyway migration that you can add on your server-extension code.
+
+Note that the order in which migrations are run is determined by the version number on the filename (the below would be 1.0.0). When you want to add a new migration after one has been run, you need to bump the version to a higher number like 1.0.1, 1.1.0, 2.0.0. So take a note a consider a versioning strategy for your Oskari instance. For best practices: the version on the frontend codes `package.json`, the version on the server Maven modules `pom.xml` and the version on the Flyway migration should be tied to each other some way. 
+
+Open the folder `sample-server-extension/app-resources/src/main/java/flyway/app`. Inside, you will find various files that can be used as templates for your flyway migration.
+
+The code in each file begins with 
+    package flyway.app;
+
+The `app` on our sample-server-extension can and should be changed to something that describes your app (`custom_flyway_module`). Note that you can also have multiple Flyway-modules on your app. The modules that are used when the server runs are set on `oskari-ext.properties` in oskari-server as `db.additional.modules`.
 
 The migration name is after two underscores after the version. This can be anything you like on your application but it's easier to maintain if naming makes sense with the migration that is being run.
 
-```
-package flyway.[your apps module];
-
-import org.flywaydb.core.api.migration.BaseJavaMigration;
-import org.flywaydb.core.api.migration.Context;
-import org.oskari.helpers.AppSetupHelper;
-import org.oskari.helpers.BundleHelper;
-
-import java.sql.Connection;
-
-/**
- * Adds a bundle to all default/user appsetups
- */
-public class V3_0_3__add_mybundle_to_apps extends BaseJavaMigration {
-
-    public void migrate(Context context) throws Exception {
-        Connection connection = context.getConnection();
-
-        // id for the bundle to be added
-        String bundleID = "mybundle";
-
-        // register a new bundle (for example application specific bundle to the database "oskari_bundle" table)
-        // this can be skipped when adding a "built-in" functionality to apps
-        BundleHelper.registerBundle(connection, bundleID);
-
-        // add the bundle to
-        AppSetupHelper.addBundleToApps(connection, bundleID);
-    }
-}
-```
-
-For removing bundles after they have been added you can see the other methods available on the AppSetupHelper class. You also don't need to use these helpers and can modify the tables with for example SQL. These are just common operations so we have helpers for them to make it as easy as it can be.
+For removing bundles after they have been added, you can see the other methods available on the AppSetupHelper class. You also don't need to use these helpers and can modify the tables with for example SQL. These are just common operations so we have helpers for them to make it as easy as it can be.

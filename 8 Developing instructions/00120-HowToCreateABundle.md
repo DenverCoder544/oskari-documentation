@@ -1,12 +1,14 @@
 ## How to create a bundle
 
-If you haven't done it already, download sources [here](https://oskari.org/download/). Then extract the files from the downloaded archive.
+If you haven't done it already, copy the oskari-frontend repo [here](https://github.com/oskariorg/oskari-frontend/).
 
 Now decide a `<bundle-identifier>` which is unique and describes the functionality the bundle offers e.g. `search` (already implemented so prefix it with something like mysearch).
 
-Create a folder with the name of your `<bundle-identifier>` under `/packages/framework/` and `/bundles/framework/`. If you require styling/images, create a folder under `/bundles/framework/<bundle-identifier>/resources/css`, too. The `/framework/` directory isn't enforced and you can replace it with something fitting your bundle compilation. The `framework` directory refers to the namespace of the same name and it includes (almost) all code written by the Oskari core team. It is encouraged to create your own namespace (and directories) for your own bundles.
+Create a folder with the name of your `<bundle-identifier>` under `/packages/framework/` and `/bundles/framework/`. If you require styling/images, create a folder under `/bundles/framework/<bundle-identifier>/resources/css`, too. The `/framework/` directory isn't enforced and you can replace it with something fitting your bundle compilation. The `framework` directory refers to the namespace of the same name and it includes (almost) all code written by the Oskari core team. 
 
-Create a `bundle.js` file under `/packages/framework/<bundle-identifier>/`. You can use the following sample as a template.
+You can create your own namespace (and folders) for your own bundles. If you plan to contribute the bundle to oskari-frontend, place the bundle either to framework, mapping or admin depending on what the functionality is/does.
+
+Create a `bundle.js` file under `/packages/framework/<bundle-identifier>/`. You can use the sample file as a template (explained below).
 
 ### The Sample bundle
 

@@ -1,16 +1,16 @@
 ## Setup Oskari development environment
 
-This section describes how to setup development environment for Oskari using source code. If you want to develop or maintain Oskari yourself this is the correct section.
+This section describes how to setup development environment for Oskari using source code. If you want to customize Oskari, this is the correct section.
 
-For setting up an instance using the ready jetty bundle see [Setup Jetty](00030-SetupJetty.md)
+For setting up an instance using the ready Jetty bundle see [Setup Jetty](00030-SetupJetty.md)
 
 ### Requirements
 
-The following items are assumed installed.
+The following items are required for the development process:
 
 * JDK 8
 * [Maven 3+](http://maven.apache.org/) (developed using 3.5.0)
-* [Git client](http://git-scm.com/) (git is mandatory for contributing any changes to Oskari) - Optionally download zip file from https://github.com/oskariorg/oskari-server
+* [Git client](http://git-scm.com/) (git is mandatory for contributing any changes to Oskari) - Optionally download zip file from [oskari-server GitHub repo](https://github.com/oskariorg/oskari-server)
 * `{jetty.base}` refers to the oskari-server folder in an unzipped [Jetty bundle](/download)
 
 ### Setup Git configuration
@@ -23,26 +23,30 @@ Ignore file permissions:
 
 ### Fetch Oskari-server source code
 
-With commandline git:
+With command line git:
 
     git clone https://github.com/oskariorg/oskari-server.git
 
-Note! You can also download the codes in zip format from Github, but for contributing any changes to Oskari git is mandatory. 
+Or download the codes in zip format from [GitHub](https://github.com/oskariorg/oskari-server).
+
 Additional Maven modules can be contributed outside git though if they are compatible with the current develop/master branch, but this is not advised.
 
-Note! The frontend source code is already available under `{jetty.base}/oskari-frontend` in the [Jetty bundle](/download). To update it you can replace it with code found in https://github.com/oskariorg/oskari-frontend.
+Note! The frontend source code is already available under `{jetty.base}/oskari-frontend` in the [Jetty bundle](/download). To update it, you can replace it with code found in [the oskari-frontend GitHub repo](https://github.com/oskariorg/oskari-frontend).
 
 ### Build Oskari server
 
-This will build all modules that Oskari server is composed of:
+Build all modules that Oskari server is composed of with the following command:
 
     cd oskari-server
     mvn clean install
 
 ### Fetch sample-server-extension source code and compile it
 
-To test your changes on a running web app you can use sample-server-extension to create a webapp using your modified version of oskari-server.
+To test your changes on a running web app you can use [sample-server-extension](https://github.com/oskariorg/sample-server-extension/) to create a web app using your modified version of oskari-server.
+
 Check that the oskari.version in pom.xml matches the project version of oskari-server you built.
+
+Download and install the sample-server-extension with the following commands:
 
     git clone https://github.com/oskariorg/sample-server-extension.git
     cd sample-server-extension
