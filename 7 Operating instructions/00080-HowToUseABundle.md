@@ -8,7 +8,7 @@ See [here](../2%20Application%20environment/00040-DirectoryStructure.md) for inf
 
 #### Implementation
 
-In oskari-frontend directory the implementations for bundles are be located under the `/bundles` folder. It's followed by a namespacing folder and a folder (usually) matching the bundle id. If the bundle has a BundleInstance (ie. something that is started/instantiated when the bundle is "played"/started) it is usually defined in a file called `instance.js`, but this is not enforced and any file referenced in bundle definition (`bundle.js`) can be used. 
+In oskari-frontend the implementations for bundles are be located under the `/bundles` folder. It's followed by a namespacing folder and a folder (usually) matching the bundle id. If the bundle has a BundleInstance (ie. something that is started/instantiated when the bundle is "played"/started) it is usually defined in a file called `instance.js`, but this is not enforced and any file referenced in bundle definition (`bundle.js`) can be used. 
 
 A Bundle instance is an Oskari class which implements `Oskari.bundle.BundleInstance` protocol. Usually you want to implement a BundleInstance since you can think of it as a starting point for your functionality which is triggered by just adding your bundle in an applications startup sequence. A Bundle instance is created as a result from a Bundle definitions (see above) create method. Bundle instance state and lifecycle is managed by Bundle Manager. However, the bundle doesn't need to have an instance and can be just used to import dependency files that can be instantiated elsewhere. 
 
