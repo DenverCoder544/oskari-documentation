@@ -12,13 +12,15 @@ Oskari's appearance, UI and [functionalities](https://oskari.org/discover/functi
 
 As an open source project Oskari is developed together. The development is coordinated by National Land Survey of Finland. Oskari is dual-licenced MIT/EUPL 1.2.
 
-Oskari's GitHub repositories are
--  https://github.com/oskariorg/sample-application
--  https://github.com/oskariorg/sample-server-extension
--  https://github.com/oskariorg/oskari-frontend
--  https://github.com/oskariorg/oskari-server
--  https://github.com/oskariorg/oskari-documentation
+Oskari's GitHub repositories can be found under https://github.com/oskariorg with main ones being:
 
+- [sample-application](https://github.com/oskariorg/sample-application)
+- [sample-server-extension](https://github.com/oskariorg/sample-server-extension)
+- [oskari-documentation](https://github.com/oskariorg/oskari-documentation)
+- [oskari-frontend](https://github.com/oskariorg/oskari-frontend)
+- [oskari-server](https://github.com/oskariorg/oskari-server)
+
+The `sample-application` and `sample-server-extension` can be used as templates for generating your own customized Oskari-based applications. If you are not developing Oskari itself, but creating an Oskari-based application these repositories are for you. The `oskari-documentation` repository contains the documentation content that is shown on oskari.org (like this page). Some links on the documentation only work when the content is viewed on oskari.org. We also have centralized our GitHub issue tracking under oskari-documentation. If you want to take a look how Oskari works, how the framework/library/common functionalities are implemented or even contribute code to Oskari you can take a look at `oskari-frontend` and `oskari-server` the repositories. 
 
 Note that this document is a work in progress. If you find any outdated information, notice that something is missing or that some sections could be improved, let us know by making an issue in GitHub or a Pull request to [the Oskari documentation repository](https://github.com/oskariorg/oskari-documentation).
 
