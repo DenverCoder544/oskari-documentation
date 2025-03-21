@@ -53,11 +53,11 @@ Oskari.clazz.defineES('Oskari.publisher.MyPluginTool',
 ```
 
 When the user starts the publisher:
-1) `UIChangeEvent` is sent to notify other functioanalities to shut themselves down to avoid conflicts for screen space.
+1) `UIChangeEvent` is sent to notify other functionalities to shut themselves down to avoid conflicts for screen space.
 2) `StateHandler.SetStateRequest` is used to set the application state (based on the embedded map that is being edited).
 3) `mapmodule` is queried for plugins with `plugin.isShouldStopForPublisher()` returning true (this defaults to `plugin.hasUI()` returning true). All of these plugins are shutdown/stopped to clean the map state for publisher functionality.
 4) Gathers/discovers all tool classes that are available on the application, creates an instance of them and groups the tools based on the group value of the tools
-5) Creates the panels based on tool groups and calls `tool.init(data)` for all tools
+5) Creates the panels and calls `tool.init(data)` for all tools
 6) Any panels that have tools where `tool.isDisplayed(data)` returns true are shown to the end user
 
 When the user exits the publisher:
