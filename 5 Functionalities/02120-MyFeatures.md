@@ -51,6 +51,10 @@ For both new and existing datasets, the user can configure which fields are show
 
 ![Attributes tab with field visibility, ordering, display name and formatting controls](../resources/images/bundles/myfeatures/new_dataset_attributes.png)
 
+#### Visualization
+
+The **Visualization** tab defines how the dataset's features are drawn on the map. Users can choose the symbol, color and size for points; the color, width and line style for lines; and the fill color, fill pattern and outline style for areas. The tab is available when importing, creating or editing a dataset. The style is saved with the dataset when the form is submitted. When editing a dataset that is already on the map, saving refreshes the layer to display the updated style.
+
 #### Attribute value presentation
 
 The **Attribute value presentation** modal opens from the settings (gear) icon in an attribute's row. It controls how the attribute's value is formatted in the feature info popup shown when a feature is clicked on the map. For example, a value can be displayed as a clickable link, an image or styled text. The modal also provides options to hide the attribute's label or omit empty values. Save the modal and then the dataset form to apply these presentation settings.
@@ -79,3 +83,11 @@ conf: {
 `maxFileSizeMb` sets the maximum import file size in megabytes and defaults to 10 MB. The maximum unzipped size is 15 times this value.
 
 The bundle opens its dataset and feature editors through UI callbacks. It does not register sandbox requests for opening these editors.
+
+### User removal
+
+User content (myfeatures, saved views, embedded maps, indicators) is removed from the database with the user.
+ The content removal is done programmatically by searching for instances of [UserContentServices](https://github.com/oskariorg/oskari-server/blob/master/service-base/src/main/java/fi/nls/oskari/service/db/UserContentService.java)
+ with `@Oskari` annotation. You can search the `oskari-server` codebase for examples of this if you need to add additional cleanup for user removal.
+
+**Note!** Removing a user from the database directly will not remove all content related to the user!
