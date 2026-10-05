@@ -51,6 +51,12 @@ For both new and existing datasets, the user can configure which fields are show
 
 ![Attributes tab with field visibility, ordering, display name and formatting controls](../resources/images/bundles/myfeatures/new_dataset_attributes.png)
 
+#### Attribute value presentation
+
+The **Attribute value presentation** modal opens from the settings (gear) icon in an attribute's row. It controls how the attribute's value is formatted in the feature info popup shown when a feature is clicked on the map. For example, a value can be displayed as a clickable link, an image or styled text. The modal also provides options to hide the attribute's label or omit empty values. Save the modal and then the dataset form to apply these presentation settings.
+
+Value presentation is separate from the attribute's technical data type. The technical type determines how the field is shown when editing a feature: for example, `String` uses a text input, numeric types use a number input, and `Date` uses a date picker. Presentation settings do not change the stored value, its technical type or the editor's input control. A `String` attribute containing a website address can therefore appear as a clickable link in the feature info popup while remaining a text input in the Feature Editor.
+
 ### Adding and editing individual features
 
 A second toolbar tool (draw icon), the dataset form's "Add feature" action and the map layer's per-feature edit tool open the draggable Feature Editor popup. It lets the user:
