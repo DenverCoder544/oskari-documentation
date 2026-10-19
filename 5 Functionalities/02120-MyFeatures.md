@@ -14,7 +14,11 @@ The bundle loads the logged in user's datasets and registers them with the map l
 
 ### Importing a dataset
 
-The bundle registers a toolbar tool (upload icon) that opens a file upload dialog. Users can upload:
+The bundle registers a toolbar tool (upload icon) that opens a file upload dialog.
+
+![Dataset import toolbar button](../resources/images/bundles/myfeatures/feature_editor_tool_import_dataset.png)
+
+Users can upload:
 
 - Shapefile (`.shp`, `.shx`, `.dbf`, `.prj`, optionally `.cpg`) as a zip
 - MapInfo MID/MIF as a zip
@@ -29,7 +33,27 @@ The maximum upload size is configurable (see [Configuration](#configuration)) an
 
 While importing, the user also fills in the dataset's name, description and data source, and can configure the layer's visualization style. If the backend rejects the data, error messages are localized based on the error/cause code returned by the server, for example unknown projection, invalid file format, too many/ambiguous files in the zip, file size exceeded or no features found in the data.
 
+![Dataset import dialog with file upload and basic information fields](../resources/images/bundles/myfeatures/feature_editor_import_dataset.png)
+
 An imported dataset is added to the map automatically. If the import succeeds but some features are skipped, the user is shown a warning with the number of skipped features. The attribute schema comes from the imported file; the Attributes tab is not shown during import.
+
+### Adding and editing individual features
+
+A second toolbar tool (draw icon), the dataset form's "Add feature" action and the map layer's per-feature edit tool open the draggable Feature Editor popup. It lets the user:
+
+![Add feature toolbar button](../resources/images/bundles/myfeatures/feature_editor_tool_add_feature.png)
+
+
+- pick which of their datasets a new feature is added to (if not already selected), or open the form to create a new dataset
+- draw the feature's geometry on the map - points, lines and areas
+- fill in the feature's attribute values based on the dataset's attribute schema
+- delete a feature (with a confirmation dialog)
+
+When adding a feature without a dataset already selected, the user first chooses a dataset from the dropdown or uses the plus button to create a new one.
+
+![Add new feature dialog with a dataset selector and a button for creating a dataset](../resources/images/bundles/myfeatures/feature_editor_add_new.png)
+
+![Create or edit a feature](../resources/images/bundles/myfeatures/feature_editor.png)
 
 ### Creating and editing a dataset
 
@@ -60,15 +84,6 @@ The **Visualization** tab defines how the dataset's features are drawn on the ma
 The **Attribute value presentation** modal opens from the settings (gear) icon in an attribute's row. It controls how the attribute's value is formatted in the feature info popup shown when a feature is clicked on the map. For example, a value can be displayed as a clickable link, an image or styled text. The modal also provides options to hide the attribute's label or omit empty values. Save the modal and then the dataset form to apply these presentation settings.
 
 Value presentation is separate from the attribute's technical data type. The technical type determines how the field is shown when editing a feature: for example, `String` uses a text input, numeric types use a number input, and `Date` uses a date picker. Presentation settings do not change the stored value, its technical type or the editor's input control. A `String` attribute containing a website address can therefore appear as a clickable link in the feature info popup while remaining a text input in the Feature Editor.
-
-### Adding and editing individual features
-
-A second toolbar tool (draw icon), the dataset form's "Add feature" action and the map layer's per-feature edit tool open the draggable Feature Editor popup. It lets the user:
-
-- pick which of their datasets a new feature is added to (if not already selected), or open the form to create a new dataset
-- draw the feature's geometry on the map - points, lines and areas
-- fill in the feature's attribute values based on the dataset's attribute schema
-- delete a feature (with a confirmation dialog)
 
 ### Configuration
 
